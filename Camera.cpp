@@ -66,8 +66,14 @@ void Camera::keyboardPressed(GLFWwindow* window, int key, int scancode, int acti
             gpuErrchk(cudaGraphicsResourceGetMappedPointer((void**)&dev_map, NULL, cudapbo));
             cudaMemcpy(h_fb, dev_map, fb_size, cudaMemcpyDeviceToHost);
             gpuErrchk(cudaGraphicsUnmapResources(1, &cudapbo, NULL));
-            int SUCCESS = stbi_write_bmp("C:\\Users\\pwnag\\Desktop\\test.bmp", WIDTH, (HEIGHT - HEIGHT_OFFSET), 4, h_fb);
+
+            std::string file = "C:\\Users\\pwnag\\Desktop\\test";
+            file.append(std::to_string(num_pictures));
+            file.append(".bmp");
+            int SUCCESS = stbi_write_bmp(file.c_str(), WIDTH, (HEIGHT - HEIGHT_OFFSET), 4, h_fb);
             free(h_fb);
+            num_pictures++;
+            save_init_file();
             break;
         }
             //   T E C H N I C A L   P A R A M E T E R S 
@@ -267,5 +273,38 @@ void Camera::load_params()
     params.p[16] = p16;
     PRINT("loaded params.");
 }
+
+
+
+
+void Camera::save_init_file()
+{
+    // float to string 
+    std::ostringstream ss;
+    ss << num_pictures << "\n";
+    std::string s(ss.str());
+
+    // write to file 
+    std::ofstream myfile;
+    myfile.open(INITFILENAME);
+    myfile << s.c_str();
+    myfile.close();
+    PRINT("saved params.");
+}
+
+
+void Camera::load_init_file()
+{
+    // right now the init file is an int that says what picture # we are at. 
+    std::ifstream infile(INITFILENAME);
+    int i;
+    if (!(infile >> i))
+    {
+        PRINT("reading init file F A I L E D");
+    }
+    num_pictures = i;
+    PRINT("loaded init file.");
+}
+
 
 

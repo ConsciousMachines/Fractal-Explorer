@@ -15,6 +15,7 @@
 #endif
 
 #define FILENAME "params.txt"
+#define INITFILENAME "init.txt"
 
 
 #include <stdlib.h>

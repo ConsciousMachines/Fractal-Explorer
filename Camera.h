@@ -32,6 +32,7 @@ public:
     cudaGraphicsResource* cudapbo;
     void (*render_options)(Camera&);
     void (*reset_parameters)(Camera&);
+    unsigned int num_pictures;
 private:
     float3 right;
     float3 up;
@@ -55,6 +56,8 @@ public:
     void KernelLauncher();
     void save_params();
     void load_params();
+    void save_init_file();
+    void load_init_file();
     void move();
     GLFWwindow* Init(GLuint* pbo_ptr);
     void Cleanup(GLuint* pbo_ptr);
