@@ -9,8 +9,6 @@
 
 
 // ===== TODO: 
-// - global illumination
-// - put button names & params & their ranges into classes for cam to display!
 // - implement my own hybrid from before (easy) 
 // - read Syntopia blogs
 // - check out that 1/exp(p) DE for mandelbox on Fractal Forums (see Sy ntopia blog)
@@ -27,6 +25,7 @@
 // warped in teh background - but I know that high loop iteration fixes that... so there really is no problem i guess?
 // either use an IMGUI slider to cut the ugly background, or install a floor like BoardIFS to look at.
 // ===== TODO L8R:
+// - global illumination
 // - meta programming: given a list of params and a DE, create a cuda kernel for that fractal
 //      the meta program also includes a program that saves & reads the params.. probably should be a class...
 // - try to understand DIFS 

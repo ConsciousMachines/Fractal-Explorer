@@ -54,7 +54,6 @@ void Camera::keyboardPressed(GLFWwindow* window, int key, int scancode, int acti
 {
     if (action == GLFW_PRESS)
     {
-
         switch (key)
         {
         case GLFW_KEY_F: // F for F O T O G R A P H 
@@ -114,7 +113,9 @@ void Camera::keyboardPressed(GLFWwindow* window, int key, int scancode, int acti
         case GLFW_KEY_ESCAPE: exit(420); break;
         default:break;
         }
+#ifndef RENDER_EVERY_FRAME // if not rendering every frame, render on key press / release 
         KernelLauncher();
+#endif
     }
     if (action == GLFW_RELEASE)
     {
@@ -130,7 +131,9 @@ void Camera::keyboardPressed(GLFWwindow* window, int key, int scancode, int acti
         case GLFW_KEY_Q: is_moving--; break;
         default:break;;
         }
+#ifndef RENDER_EVERY_FRAME // if not rendering every frame, render on key press / release 
         KernelLauncher();
+#endif
     }
 }
 
@@ -207,7 +210,7 @@ void Camera::move()
             position += MOV_AMT * left;
             break;
         }
-#ifndef RENDER_EVERY_FRAME
+#ifndef RENDER_EVERY_FRAME // if not rendering every frame, render on key press / release and moving == true 
         KernelLauncher();
     }
 #else
@@ -297,7 +300,7 @@ void Camera::load_init_file()
 {
     // right now the init file is an int that says what picture # we are at. 
     std::ifstream infile(INITFILENAME);
-    int i;
+    unsigned int i;
     if (!(infile >> i))
     {
         PRINT("reading init file F A I L E D");
