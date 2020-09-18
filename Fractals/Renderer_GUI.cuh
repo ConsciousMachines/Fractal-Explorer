@@ -9,7 +9,7 @@
 // COOL FRACTALS:
 // Hybrid1 := loop 4 {4 mandelbox, 1 menger} - has bulbs
 // Hybrid2 := loop 4 {1 menger, 4 mandelbox} - super clean, Manger Offset Y from hybrid preset
-
+//      adding more mengers / steps to this makes it even more beautiful but i think my fan is broken.
 
 // TODO:
 // - add repeat (mod) to Mandelbox Offset (pass it the argument iTime % 5)
@@ -167,6 +167,54 @@ __device__ inline float DE(float3 z, Params params)
             z = MandelboxScale * z + MandelboxOffset;
             dr = dr * abs(MandelboxScale) + dr_offset_Mandel;
         }
+
+        // menger step
+        z = abs(z);
+        if (z.x < z.y) {
+            temp = z.x;
+            z.x = z.y;
+            z.y = temp;
+        }
+        if (z.x < z.z) {
+            temp = z.x;
+            z.x = z.z;
+            z.z = temp;
+        }
+        if (z.y < z.z) {
+            temp = z.y;
+            z.y = z.z;
+            z.z = temp;
+        }
+        z = MengerScale * z - MengerOffset * (MengerScale - Menger_Scale_Offset); // same space transform as tetrahedron
+        if (z.z < -Menger_Z_thing * MengerOffset.z * (MengerScale - Menger_Scale_Offset))
+        {
+            z.z += MengerOffset.z * (MengerScale - Menger_Scale_Offset);
+        }
+        dr = dr * abs(MengerScale) + 1.f;// dr_offset_Menger;
+
+        // menger step
+        z = abs(z);
+        if (z.x < z.y) {
+            temp = z.x;
+            z.x = z.y;
+            z.y = temp;
+        }
+        if (z.x < z.z) {
+            temp = z.x;
+            z.x = z.z;
+            z.z = temp;
+        }
+        if (z.y < z.z) {
+            temp = z.y;
+            z.y = z.z;
+            z.z = temp;
+        }
+        z = MengerScale * z - MengerOffset * (MengerScale - Menger_Scale_Offset); // same space transform as tetrahedron
+        if (z.z < -Menger_Z_thing * MengerOffset.z * (MengerScale - Menger_Scale_Offset))
+        {
+            z.z += MengerOffset.z * (MengerScale - Menger_Scale_Offset);
+        }
+        dr = dr * abs(MengerScale) + 1.f;// dr_offset_Menger;
 
         // menger step
         z = abs(z);

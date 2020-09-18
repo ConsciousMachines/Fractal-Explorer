@@ -38,7 +38,7 @@ private:
     float3 up;
     float3 mov_direction;
     float MOV_AMT = 0.1f; // how slowly we are moving (zooming)
-    float ROT_AMT = 0.02f;
+    float ROT_AMT = 0.03f;
     int is_moving = 0; // only needed bc it feels better when you can freely press 2 buttons and still move
     enum MOVE_TYPE { MOVE_FORWARD, MOVE_BACKWARD, MOVE_UP, MOVE_DOWN, MOVE_RIGHT, MOVE_LEFT, ROTATE_RIGHT, ROTATE_LEFT, };
     MOVE_TYPE move_type;

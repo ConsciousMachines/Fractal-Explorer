@@ -9,6 +9,9 @@
 
 
 // ===== TODO: 
+// -check hybrids on fragmentaruim code - under knighty collection, with menger
+//      - apparently they all use numerical grad, see syntoipia part 5[T R Y A G A I N]
+// - implement trap functions from syntopia 8
 // - implement my own hybrid from before (easy) 
 // - read Syntopia blogs
 // - check out that 1/exp(p) DE for mandelbox on Fractal Forums (see Sy ntopia blog)
