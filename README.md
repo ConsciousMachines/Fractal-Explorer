@@ -10,8 +10,6 @@ Rather than waiting to render an animation, you can fly around the structure in 
 
 ![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_2.png)
 
-![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_3.png)
-
 # Distance Estimators 
 
 The part of the code that determines the fractal is the DE function. It takes a pixel's position `z`, and a struct `params` which holds parameters of the fractal. These are linked to the ImGui sliders so you can change them in real time. To change the fractal, you replace this function.
