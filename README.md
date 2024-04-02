@@ -1,4 +1,4 @@
-# Fractal-Explorer
+# Fractal Explorer
 
 This project aims to be a `rapid prototyping`, `real time` version of the preview panel of *Mandelbulb3D*, allowing the user to rapidly explore fractal structures by instantly changing parameters using the ImGui sliders, and move the camera using the arrow keys to find good angles.
 
