@@ -2,6 +2,8 @@
 
 This project aims to be a `rapid prototyping`, `real time` version of the preview panel of *Mandelbulb3D*, allowing the user to rapidly explore fractal structures by instantly changing parameters using the ImGui sliders, and move the camera using the arrow keys to find aesthetic angles.
 
+![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/fractal_animation_large.gif)
+
 Rather than waiting to render an animation, you can fly around the structure in real time. This allows you to find coordinates and parameters that you can then import into Mandelbulb3D for professional lighting. 
 
 ![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_1.png)
