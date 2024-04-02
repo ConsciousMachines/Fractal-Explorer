@@ -57,10 +57,10 @@ Since the point of this project is rapid prototyping, we use a simple yet aesthe
 - `Left/Right arrow keys`: rotate left/right
 - `Q/E`: move up/down along the Y axis 
 - `O/P`: slow down / speed up movement. This has the effect of zooming in/out, as you slow down while approaching a structure. 
-- `F`: take a photograph of the current screen and save as .bmp
+- `F`: take a photograph of the current screen and save as `.bmp` in the `frames` folder. 
 - `Z`: save the fractal parameters, and your location (basically you can save whatever you are seeing). But there is only one save file!
 - `X`: load save file. 
-- `K/L, N/M, V/B`: technical rendering stuff: step_size, epsilon for determining if you're near enough to the fractal, and another epsilon used in finding normals. These can change the appearance of the object, smaller epsilons will show finer structure but can generate noise. step_size wasn't particularly useful.
+- `K/L, N/M, V/B`: technical rendering stuff: `step_size`, `epsilon` for determining if you're near enough to the fractal, and another `epsilon` used in finding normals. These can change the appearance of the object, smaller `epsilon`s will show finer structure but can generate noise. `step_size` wasn't particularly useful.
 - `R`: reset the technical parameters 
 
 # How to build
