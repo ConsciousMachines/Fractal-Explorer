@@ -4,11 +4,11 @@ This project aims to be a `rapid prototyping`, `real time` version of the previe
 
 Rather than waiting to render an animation, you can fly around the structure in real time. This allows you to find coordinates and parameters that you can then import into Mandelbulb3D for professional lighting. 
 
-![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/Screenshot%20(280).png)
+![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_1.png)
 
-![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/Screenshot%20(278).png)
+![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_2.png)
 
-![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/Screenshot%20(284).png)
+![](https://github.com/ConsciousMachines/Fractal-Explorer/blob/master/img/img_3.png)
 
 # Distance Estimators 
 
